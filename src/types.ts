@@ -49,3 +49,6 @@ export interface MessageState {
     message: string
     detailMessage: string
 }
+export interface UserState {
+    user: User | null
+}
