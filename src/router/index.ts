@@ -8,6 +8,7 @@ import UserView from '@/views/UserView.vue'
 import UserProfileView from '@/views/user/UserProfileView.vue'
 import UserPostView from '@/views/user/UserPostView.vue'
 import UserLayoutView from '@/views/user/UserLayoutView.vue'
+import nProgress from 'nprogress'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -63,5 +64,13 @@ const router = createRouter({
     }
   ],
 })
+router.beforeEach(() =>{
+  nProgress.start()
+})
+
+router.afterEach(() =>{
+  nProgress.done()
+})
+
 
 export default router
