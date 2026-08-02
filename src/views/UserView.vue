@@ -35,32 +35,17 @@ onMounted(() =>{
 
 <template>
       <h1>Users</h1>
-       <div class="events">
+       <div class="users">
     <UserCard v-for="user in users" :key="user.id" :user="user"/>
    
-  <!-- <div class="pagination">
-    <RouterLink
-    id="page-prev"
-    :to="{name: 'event-list-view', query: {page: page - 1, limit: perPage  } }"
-    rel="prev"
-    v-if="page != 1">&#60; Prev Page</RouterLink>
-  
 
-  <RouterLink 
-  id="page-next"
-  :to="{ name: 'event-list-view', query: { page: page + 1, limit: perPage } }" 
-  rel="next" 
-  v-if="hasNextPage" >
-    Next Page &#62;
-  </RouterLink>
-  </div> -->
   </div>
 
 
 </template>
 
 <style scoped>
-.events {
+.users {
   display: flex;
   flex-direction: column;
   align-items: center;

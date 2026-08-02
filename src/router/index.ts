@@ -5,6 +5,7 @@ import AboutView from '@/views/AboutView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import NetworkErrorView from '@/views/event/NetworkErrorView.vue'
 import UserView from '@/views/UserView.vue'
+import UserDetailView from '@/views/UserDetailView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,6 +19,12 @@ const router = createRouter({
         // perPage: Number(route.query.limit) || 2
       })
       
+    },
+     {
+      path: '/user/:id',
+      name: 'user-detail-view',
+      component: UserDetailView,
+      props: true
     },
     {
       path: '/about',
