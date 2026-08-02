@@ -6,16 +6,7 @@ import {ref, onMounted} from 'vue'
 import UserService from '@/services/UserService'
 const users = ref<User[] | null>(null)
 
-const props = defineProps({
-  page: {
-    type: Number,
-    required: true
-  },
-  perPage: {
-    type: Number,
-    required: true
-  }
-})
+
 
 
 onMounted(() =>{

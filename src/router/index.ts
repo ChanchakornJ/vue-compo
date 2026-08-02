@@ -5,7 +5,9 @@ import AboutView from '@/views/AboutView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import NetworkErrorView from '@/views/event/NetworkErrorView.vue'
 import UserView from '@/views/UserView.vue'
-import UserDetailView from '@/views/UserDetailView.vue'
+import UserProfileView from '@/views/user/UserProfileView.vue'
+import UserPostView from '@/views/user/UserPostView.vue'
+import UserLayoutView from '@/views/user/UserLayoutView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,9 +24,21 @@ const router = createRouter({
     },
      {
       path: '/user/:id',
-      name: 'user-detail-view',
-      component: UserDetailView,
-      props: true
+      name: 'user-layout-view',
+      component: UserLayoutView,
+      props: true,
+      children: [
+        {
+          path: '',
+          name: 'user-profile-view',
+          component: UserProfileView
+        },
+        {
+          path: 'post',
+          name: 'user-post-view',
+          component: UserPostView
+        }
+      ]
     },
     {
       path: '/about',
